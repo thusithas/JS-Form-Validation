@@ -1,0 +1,201 @@
+:root {
+    --primary-color: #2547de;
+    --error-color: #ff3860;
+    --success-color: #09c372;
+    --warning-color: #ffaa00;
+    --text-color: #333;
+    --light-grey: #f5f5f5;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 107, 255, 0.2);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+input.error {
+    border-color: var(--error-color);
+}
+
+input.success {
+    border-color: var(--success-color);
+}
+
+.password-group {
+    position: relative;
+}
+
+.password-input {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.toggle-password:hover {
+    opacity: 1;
+}
+
+.password-feedback {
+    display: none;
+    margin-top: 10px;
+}
+
+.strength-meter {
+    height: 5px;
+    background-color: var(--light-grey);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.strength-text {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.password-conditions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.password-conditions li {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.password-conditions li:before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--error-color);
+}
+
+.password-conditions li.valid {
+    color: var(--success-color);
+}
+
+.password-conditions li.valid::before {
+    content: '✓';
+    color: var(--success-color);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #3a5bef;
+}
+
+
+.strength-weak {
+    background-color: var(--error-color);
+    width: 25%;
+}
+
+.strength-medium {
+    background-color: var(--warning-color);
+    width: 50%;
+}
+
+.strength-strong {
+    background-color: var(--success-color);
+    width: 75%;
+}
+
+.strength-very-strong {
+    background-color: var(--success-color);
+    width: 100%;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Form Validation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Create Account</h1>
+
+        <form action="" method="" id="registrationForm" novalidate>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required minlength="2">
+                <span class="error-message" id="firstNameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required minlength="2">
+                <span class="error-message" id="lastNameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+                <span class="error-message" id="phoneError"></span>
+            </div>
+            <div class="form-group password-group">
+                <label for="password">Password</label>
+                <div class="password-input">
+                    <input type="password" id="password" name="password" required>
+                    <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
+                </div>
+                <span class="error-message" id="passwordError"></span>
+
+                <div class="password-feedback" id="passwordFeedback">
+                    <div class="strength-meter">
+                        <div class="strength-bar" id="strengthBar"></div>
+                    </div>
+                    <span class="strength-text" id="strengthText"></span>
+                    <ul class="password-conditions" id="passwordConditions">
+                        <li data-condition="length" >At least 8 characters</li>
+                        <li data-condition="lowercase" >Contains lowercase letter</li>
+                        <li data-condition="uppercase" >Contains uppercase letter</li>
+                        <li data-condition="number" >Contains number</li>
+                        <li data-condition="special" >Contains special character</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group password-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="password-input">
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <i class="fa-solid fa-eye-slash toggle-password" id="toggleConfirmPassword"></i>
+                </div>
+                <span class="error-message" id="confirmPasswordError"></span>
+            </div>
+
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
